@@ -14,6 +14,10 @@ app.use(cors())
 
 await connectDB()
 
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3000'], // Add your frontend URLs
+  credentials: true
+}));
 
 app.use('/api/user', userRouter)
 app.use('/api/image', imageRouter)
