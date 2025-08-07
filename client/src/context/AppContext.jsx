@@ -11,7 +11,7 @@ const AppContextProvider = (props) => {
     const [token, setToken] = useState(localStorage.getItem('token'))
     const [credit, setCredit] = useState(false)
 
-    const backendUrl = "http://localhost:400"
+    const backendUrl = "http://localhost:4000"
 
     const navigate = useNavigate()
 
