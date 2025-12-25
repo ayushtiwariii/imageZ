@@ -27,6 +27,10 @@ app.get('/',(req,res)=>{
     res.send('api working ')
 })
 
+
+console.log("RAZORPAY KEY:", process.env.RAZORPAY_KEY_ID);
+
+
 app.listen(port,()=>{
     console.log(`server is listening on http://localhost:${port}`)
 })

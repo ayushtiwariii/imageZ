@@ -11,9 +11,10 @@ const BuyCredit = () => {
     useContext(AppContext);
   const navigate = useNavigate();
 
-  const initPay = async (order) => {
+  const initPay = async (order, razorpayKey) => {
+  console.log("RAZORPAY KEY USED:", razorpayKey);
     const options = {
-      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      key: razorpayKey,
       amount: order.amount,
       currency: order.currency,
       name: "Credits Payment",
@@ -69,7 +70,7 @@ const BuyCredit = () => {
       );
 
       if (data.success) {
-        initPay(data.order);
+        initPay(data.order,data.key);
       } else {
         toast.error(data.message);
       }
